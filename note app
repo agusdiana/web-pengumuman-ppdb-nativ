@@ -1,0 +1,19 @@
+#setup running env
+1. masuk kedalam folder ini kemudian jalankan 
+docker-compose up -d --build (--build ditambahkan hanya kerika baru dijalankan pertama kali )
+
+2. cek apakah php dan ppostgre sudah jalan dengan 
+docker ps
+
+3. jika sudah jalan download dbeaver untuk lihat databasenya 
+https://dbeaver.io/download/
+
+4. buatkoneksi database di dbeaver caranya 
+new conection kemudian masukan user, db dan password sama seperti yang ada pada file docker compose 
+
+5. kemudian test koneksin
+
+#akses web
+http://localhost:8080/
+
+# 6. jalanin query untuk buat table dan insert data untuk login (jalanin querynya di dbeaver)
