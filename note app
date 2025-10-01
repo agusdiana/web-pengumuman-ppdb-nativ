@@ -10,10 +10,31 @@ https://dbeaver.io/download/
 
 4. buatkoneksi database di dbeaver caranya 
 new conection kemudian masukan user, db dan password sama seperti yang ada pada file docker compose 
-
+environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user123
+      
 5. kemudian test koneksin
 
 #akses web
 http://localhost:8080/
 
 # 6. jalanin query untuk buat table dan insert data untuk login (jalanin querynya di dbeaver)
+--create tabel user untuk login
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100),
+    role VARCHAR(20) NOT NULL DEFAULT 'siswa',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+--insert untuk data admin 
+INSERT INTO users (username, password, email,role)
+VALUES ('admin', 'Password09', 'admin@example.com','admin');
+
+INSERT INTO users (username, password, email,role)
+VALUES ('siswa', 'siswa', 'siswaexample.com','siswa');
+
