@@ -21,6 +21,8 @@ services:
       - mynet
     volumes:
       - db_data:/var/lib/postgresql/data
+      - ./db/initdb:/docker-entrypoint-initdb.d
+
 
 volumes:
   db_data:
